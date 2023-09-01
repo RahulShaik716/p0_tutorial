@@ -32,8 +32,14 @@ def shopSmart(orderList, fruitShops):
     """
     answer = None
     "*** YOUR CODE HERE ***"
-    totalCost = sys.maxsize
+    min_cost = float('inf')
+    for shop in fruitShops:
+        totalCost = shop.getPriceOfOrder(orderList)
+        if totalCost < min_cost:
+            min_cost = totalCost
+            answer = shop
 
+    
     return answer
 
 
